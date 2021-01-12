@@ -49,7 +49,7 @@ BEGIN
          END_IF
       // write the results   
       Write(lengSentence)
-      Write(numWords)
+      Write(numWords+1)
       Write(numVowels)
     END_FOR
 
