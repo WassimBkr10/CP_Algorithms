@@ -1,0 +1,56 @@
+/*
+- The problem: read a sentence, which ends with a point, character by character and to determine:
+               The length of the sentence.
+               The number of words in the sentence.
+               The number of vowels in the sentence (A, E, I, O, U).
+- The constraints: The sentence most be string end with a point & separated with space between words.
+- The input: The sentence which is a STRING.
+             + list of vowels's CHAR.
+             + point which is STRING.
+             + space whiche is STRING.
+             + i which is the counter INTEGER.  
+- The output: length of sentence which is INTEGER.
+              + number of words which is INTEGER.
+              + number of vowels which is INTEGER.
+- The solution: The solution consists of reading the sentence, get the lenght by counting the number of charecters without spaces,
+get the number of words by counting the spaces, searching the number of vowels.
+*/
+
+
+ALGORITHM read_sentences
+VAR
+
+    sentence: STRING;
+    pnt: STRING:= ".";
+    space: STRING:= " ";
+    vowels: CHAR:= "A", "E", "I", "O", "U";
+    i: INTEGER:=0;
+    lengSentence: INTEGER;
+    numWords: INTEGER;
+    numVowels: INTEGER;
+
+
+BEGIN
+
+//using the for loop over the lenght of the string sentence
+    FOR i FROM 1 TO sentence.lenght STEP step  DO
+         // if the character is space add +1 to the numwords
+         IF (sentence[i] := space ) THEN
+              numWords := numWords +1;
+         // if the character is in vowels add +1 to the numVowels     
+         ELSE_IF (sentence[i] := vowels) THEN
+               numVowels := numVowels + 1;    
+         // if the character is in point add leave     
+         ELSE_IF (sentence[i] := pnt) THEN
+               BREAK;
+         // else add +1 to lengSentence      
+         ELSE
+               lengSentence := lengSentence + 1;
+         END_IF
+      // write the results   
+      Write(lengSentence)
+      Write(numWords)
+      Write(numVowels)
+    END_FOR
+
+END
