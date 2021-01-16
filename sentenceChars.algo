@@ -33,7 +33,7 @@ VAR
 BEGIN
 
 //using the for loop over the lenght of the string sentence
-    FOR i FROM 1 TO sentence.lenght STEP step  DO
+    FOR i FROM 1 TO sentence.lenght-1 STEP step  DO
          // if the character is space add +1 to the numwords
          IF (sentence[i] := space ) THEN
               numWords := numWords +1;
@@ -49,7 +49,7 @@ BEGIN
          END_IF
       // write the results   
       Write(lengSentence)
-      Write(numWords+1)
+      Write(numWords)
       Write(numVowels)
     END_FOR
 
